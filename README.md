@@ -24,6 +24,7 @@ The beauty of this being on GitHub is that you can contribute to this Wiki. If y
 
 - [Getting Started](docs/getting_started.md)
 - [Code Samples](docs/code_samples.md)
+- [Advanced Topics](docs/advanced_topics.md)
 - [Contributing](CONTRIBUTING.md)
 
 ## License
