@@ -5,7 +5,7 @@ This guide will help you set up your first MonoGame project.
 ## Prerequisites
 
 - [.NET SDK](https://dotnet.microsoft.com/download)
-- [MonoGame Setup](https://www.monogame.net/downloads/)
+- [MonoGame Setup](https://docs.monogame.net/articles/getting_started/index.html)
 
 ## Creating a New Project
 
