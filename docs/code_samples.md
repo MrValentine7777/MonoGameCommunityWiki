@@ -240,7 +240,12 @@ namespace MyGame
 			// Draw game over graphics
 		}
 
-
+		<Summay>
+		/// The possible game states for the game
+		/// This can be used to control the flow of the game
+		/// You can imagine this as a state machine where 
+		/// the game can be in one of these states at any given time
+		</Summay>
 		public enum GameState
 		{
 			/// <summary>
