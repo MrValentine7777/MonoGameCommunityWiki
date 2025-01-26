@@ -59,4 +59,3 @@ This template provides a starting point for your MonoGame project. You can add a
 For more advanced game development topics, refer to the other guides in the documentation.
 
 [← Back to Index](index.md)
-
