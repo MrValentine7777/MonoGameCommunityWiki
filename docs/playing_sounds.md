@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 ## Playing Sounds
 
 The following code shows how to play sounds in a MonoGame project:
@@ -13,3 +15,5 @@ protected override void LoadContent()
 	soundEffectInstance.Play();
 }
 ```
+
+[← Back to Index](index.md)

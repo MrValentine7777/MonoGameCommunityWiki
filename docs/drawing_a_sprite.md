@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 # Drawing a Sprite
 
 The following code shows how to draw a sprite on the screen using a `Texture2D` object:
@@ -27,3 +29,5 @@ You would perform this step in the `LoadContent` method of your `Game` class.
 This code snippet loads a `Texture2D` object named "sprite" from the content pipeline. The image file should be placed in the Content folder of the project and added to the content pipeline using the MonoGame Content Pipeline tool.
 
 By following these steps, you can draw a sprite on the screen in a MonoGame project.
+
+[← Back to Index](index.md)

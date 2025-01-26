@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 ## Advanced Input Handling
 
 The following code demonstrates how to implement a robust input handling system with key repeat prevention:
@@ -176,3 +178,5 @@ The system is particularly useful for:
 - Action games where precise input timing is important
 - Games that need to support both keyboard and gamepad
 - Any situation where you need to prevent key repeat
+
+[← Back to Index](index.md)

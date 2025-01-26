@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 ## Creating a Sprite Sheet Animation
 
 The following code shows how to create a sprite sheet animation in a MonoGame project:
@@ -27,3 +29,5 @@ protected override void Draw(GameTime gameTime)
 	base.Draw(gameTime);
 }
 ```
+
+[← Back to Index](index.md)

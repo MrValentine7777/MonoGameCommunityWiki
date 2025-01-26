@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 ## Anatomy of a MonoGame project
 
 The following code shows the detailed structure of a MonoGame project, including comprehensive setup options and explanations for each component:
@@ -230,3 +232,5 @@ namespace MyGame
 	}
 }
 ```
+
+[← Back to Index](index.md)

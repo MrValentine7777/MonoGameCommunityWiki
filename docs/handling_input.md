@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 ## Handling Input
 
 The following code shows how to handle input in a MonoGame project:
@@ -14,3 +16,5 @@ protected override void Update(GameTime gameTime)
 	base.Update(gameTime);
 }
 ```
+
+[← Back to Index](index.md)

@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 ## Implementing Collision Detection
 
 The following code shows how to implement collision detection in a MonoGame project:
@@ -14,3 +16,5 @@ protected override void Update(GameTime gameTime)
 	base.Update(gameTime);
 }
 ```
+
+[← Back to Index](index.md)

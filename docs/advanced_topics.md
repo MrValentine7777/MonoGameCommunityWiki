@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 # Advanced Topics
 
 This section covers advanced concepts and techniques for MonoGame development. These topics assume you're already familiar with the basics covered in the [Getting Started](getting_started.md) guide and have explored the [Code Samples](code_samples.md).
@@ -283,3 +285,5 @@ foreach (var entityA in entities)
 - [Real-Time Rendering](http://www.realtimerendering.com/)
 
 Remember to profile your game regularly and optimize only when necessary. Focus on maintaining clean, maintainable code first, then optimize the critical paths that affect performance.
+
+[← Back to Index](index.md)

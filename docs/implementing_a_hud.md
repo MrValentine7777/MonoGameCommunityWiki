@@ -19,6 +19,8 @@ This guide demonstrates how to implement a basic heads-up display (HUD) in MonoG
 ## Implementation
 Here's how to implement a basic heads-up display (HUD) in MonoGame:
 
+```csharp
 // HUD code goes here
+```
 
 [← Back to Index](index.md)

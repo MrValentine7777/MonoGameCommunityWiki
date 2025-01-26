@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 ## Loading Content
 
 The following code shows how to load content in a MonoGame project:
@@ -10,3 +12,5 @@ protected override void LoadContent()
 	texture = Content.Load<Texture2D>("sprite");
 }
 ```
+
+[← Back to Index](index.md)
