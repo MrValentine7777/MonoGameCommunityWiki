@@ -16,7 +16,7 @@ The entire point of this Wiki is to help find answers and solutions and inspire 
 
 The Original date will be inserted here when I get around to sifting the wiki archive data.
 
-## The Beauty Of This Being On GitHub
+### The Beauty Of This Being On GitHub
 
 The beauty of this being on GitHub is that you can contribute to this Wiki. If you see something that is incorrect, or you have a better way of doing something, please feel free to contribute. I will review all contributions and merge them if they are fitting. It may be advisable to discuss adding a change on the Discord before committing time to the implementation scenario.
 
