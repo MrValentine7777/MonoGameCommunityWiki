@@ -6,7 +6,7 @@ Game states are essential components of any game, allowing you to manage differe
 
 The following enum defines the possible game states:
 
-//code-start-csharp
+```csharp
 public enum GameState
 {
 	MainMenu,
@@ -18,8 +18,7 @@ public enum GameState
 	Scores,
 	Credits
 }
-//code-end-csharp
-
+```
 Each state can have its own set of properties, methods, and logic to manage the game's behavior. For example, the `Playing` state may handle player input, update game objects, and render the game world. In contrast, the `MainMenu` state may display the main menu screen and handle user input to navigate the menu.
 
 ## State Management
@@ -28,7 +27,7 @@ To manage game states effectively, you can use a state machine that transitions 
 
 Here's an example of a simple state machine implementation:
 
-//code-start-csharp
+```csharp
 public class StateMachine
 {
 	private GameState currentState;
@@ -69,6 +68,6 @@ public class StateMachine
 		}
 	}
 }
-//code-end-csharp
+```
 
 In this example, the `StateMachine` class tracks the current game state and provides methods to change the state and update the current state. You can extend this implementation by adding more sophisticated state management features, such as state-specific initialization, cleanup, and transition logic.
