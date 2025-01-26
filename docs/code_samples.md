@@ -2,6 +2,35 @@
 
 Here are some useful code samples to help you get started with MonoGame development.
 
+This page is not yet complete nor properly edited, it is currently an early version of its true self.
+
+## Table of Contents
+
+- [Basic Game Loop](#basic-game-loop)
+- [Anatomy of a MonoGame project](#anatomy-of-a-monogame-project)
+  - [Game States](#game-states)
+    - [Main Menu State](#main-menu-state)
+    - [Playing State](#playing-state)
+    - [Paused State](#paused-state)
+    - [Game Over State](#game-over-state)
+    - [Loading State](#loading-state)
+    - [Options State](#options-state)
+    - [Scores State](#scores-state)
+    - [Credits State](#credits-state)
+- [Drawing a Sprite](#drawing-a-sprite)
+- [Handling Input](#handling-input)
+- [Loading Content](#loading-content)
+- [Playing Sounds](#playing-sounds)
+- [Creating a Sprite Sheet Animation](#creating-a-sprite-sheet-animation)
+- [Implementing Collision Detection](#implementing-collision-detection)
+- [Implementing a Camera](#implementing-a-camera)
+- [Creating a Tilemap](#creating-a-tilemap)
+- [Implementing a HUD](#implementing-a-hud)
+- [Creating a Menu System](#creating-a-menu-system)
+- [Implementing a Finite State Machine](#implementing-a-finite-state-machine)
+- [Creating a Particle System](#creating-a-particle-system)
+- [Implementing Pathfinding](#implementing-pathfinding)
+
 ## Basic Game Loop
 
 The following code shows the basic structure of a MonoGame project's main game class:
@@ -17,7 +46,6 @@ This template includes the essential components of a MonoGame project:
 The game loop automatically calls Update and Draw in sequence to create the game's runtime cycle. The `GameTime` parameter provides timing information for frame-rate independent game logic.
 
 ```csharp
-// The following code is a C# code block
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -95,7 +123,6 @@ This template demonstrates a complete MonoGame project structure with the follow
 The code includes extensive comments explaining each section's purpose and usage, making it ideal for beginners to understand the structure of a MonoGame project. You can use this as a starting point and modify it according to your game's specific needs.
 
 ```csharp
-// The following code is a C# code block
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -299,7 +326,6 @@ The following code shows how to draw a sprite on the screen using a `Texture2D` 
 This code snippet demonstrates how to draw a sprite on the screen using a `Texture2D` object. The `SpriteBatch` class is used to draw 2D graphics in MonoGame. The `Draw` method takes a `Texture2D` object, a position vector, and an optional color parameter. The `Begin` and `End` methods are used to start and finish the drawing process.
 
 ```csharp
-// The following code is a C# code block
 protected override void Draw(GameTime gameTime)
 {
 	GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -317,7 +343,6 @@ The following code shows how to handle input in a MonoGame project:
 This code snippet demonstrates how to handle input in a MonoGame project. The `Keyboard` and `GamePad` classes provide access to keyboard and gamepad input, respectively. You can check for specific keys or buttons being pressed, released, or held down to control your game logic.
 
 ```csharp
-// The following code is a C# code block
 protected override void Update(GameTime gameTime)
 {
 	if (GamePad.GetState(PlayerIndex.One).Buttons.Back == 
@@ -328,17 +353,198 @@ protected override void Update(GameTime gameTime)
 }
 ```
 
+
+## Advanced Input Handling
+
+The following code demonstrates how to implement a robust input handling system with key repeat prevention:
+
+This code creates an InputManager class that:
+- Tracks both current and previous keyboard/gamepad states
+- Prevents repeated key presses until key is released
+- Provides methods to check if keys were just pressed or released
+- Handles both keyboard and gamepad input in a unified way
+- Uses a singleton pattern for easy access throughout the game
+
+```csharp
+public class InputManager
+{
+    // Singleton instance
+    private static InputManager _instance;
+    public static InputManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+                _instance = new InputManager();
+            return _instance;
+        }
+    }
+
+    // Current and previous input states
+    private KeyboardState _currentKeyboardState;
+    private KeyboardState _previousKeyboardState;
+    private GamePadState _currentGamePadState;
+    private GamePadState _previousGamePadState;
+    
+    // Dictionary to track locked keys
+    private Dictionary<Keys, bool> _keyLocks;
+    private Dictionary<Buttons, bool> _buttonLocks;
+
+    public InputManager()
+    {
+        _keyLocks = new Dictionary<Keys, bool>();
+        _buttonLocks = new Dictionary<Buttons, bool>();
+    }
+
+    // Update input states
+    public void Update()
+    {
+        _previousKeyboardState = _currentKeyboardState;
+        _previousGamePadState = _currentGamePadState;
+        
+        _currentKeyboardState = Keyboard.GetState();
+        _currentGamePadState = GamePad.GetState(PlayerIndex.One);
+    }
+
+    // Check if a key was just pressed (with repeat prevention)
+    public bool IsKeyPressed(Keys key)
+    {
+        // Initialize lock state if not present
+        if (!_keyLocks.ContainsKey(key))
+            _keyLocks[key] = false;
+
+        // Check if key was just pressed and not locked
+        if (_currentKeyboardState.IsKeyDown(key) && 
+            _previousKeyboardState.IsKeyUp(key) && 
+            !_keyLocks[key])
+        {
+            _keyLocks[key] = true;
+            return true;
+        }
+
+        // Remove lock when key is released
+        if (_currentKeyboardState.IsKeyUp(key))
+            _keyLocks[key] = false;
+
+        return false;
+    }
+
+    // Check if a button was just pressed (with repeat prevention)
+    public bool IsButtonPressed(Buttons button)
+    {
+        if (!_buttonLocks.ContainsKey(button))
+            _buttonLocks[button] = false;
+
+        if (_currentGamePadState.IsButtonDown(button) && 
+            _previousGamePadState.IsButtonUp(button) && 
+            !_buttonLocks[button])
+        {
+            _buttonLocks[button] = true;
+            return true;
+        }
+
+        if (_currentGamePadState.IsButtonUp(button))
+            _buttonLocks[button] = false;
+
+        return false;
+    }
+
+    // Check if a key is being held down
+    public bool IsKeyHeld(Keys key)
+    {
+        return _currentKeyboardState.IsKeyDown(key);
+    }
+
+    // Check if a button is being held down
+    public bool IsButtonHeld(Buttons button)
+    {
+        return _currentGamePadState.IsButtonDown(button);
+    }
+
+    // Get thumbstick values
+    public Vector2 LeftThumbStick
+    {
+        get { return _currentGamePadState.ThumbSticks.Left; }
+    }
+
+    public Vector2 RightThumbStick
+    {
+        get { return _currentGamePadState.ThumbSticks.Right; }
+    }
+}
+```
+
+Usage example in your game class:
+
+```csharp
+public class Game1 : Game
+{
+    private InputManager _input;
+
+    protected override void Initialize()
+    {
+        _input = InputManager.Instance;
+        base.Initialize();
+    }
+
+    protected override void Update(GameTime gameTime)
+    {
+        // Update input states
+        _input.Update();
+
+        // Check for single press actions
+        if (_input.IsKeyPressed(Keys.Space) || _input.IsButtonPressed(Buttons.A))
+        {
+            // Handle jump action - will only trigger once per press
+            Jump();
+        }
+
+        // Check for held actions
+        if (_input.IsKeyHeld(Keys.Left) || _input.IsButtonHeld(Buttons.DPadLeft))
+        {
+            // Handle continuous movement
+            MoveLeft();
+        }
+
+        // Get analog input
+        Vector2 movement = _input.LeftThumbStick;
+        if (movement != Vector2.Zero)
+        {
+            // Handle analog movement
+            MovePlayer(movement);
+        }
+
+        base.Update(gameTime);
+    }
+}
+```
+
+This input handling system provides several benefits:
+1. Prevents unintended repeat actions from held keys
+2. Clearly separates single-press and held-key actions
+3. Handles both keyboard and gamepad input consistently
+4. Provides analog input support for smooth movement
+5. Uses singleton pattern for easy access across game classes
+6. Maintains clean and organized input state management
+
+The system is particularly useful for:
+- Menu navigation where you want single button presses
+- Action games where precise input timing is important
+- Games that need to support both keyboard and gamepad
+- Any situation where you need to prevent key repeat
+
 ## Loading Content
 
 The following code shows how to load content in a MonoGame project:
 
 This code snippet demonstrates how to load content in a MonoGame project. The `ContentManager` class is used to load and manage game assets such as textures, fonts, and sounds. You can load content by specifying the asset file path and type, and then access it using the `Content` property.
 
-// The following code is a C# code block
+```csharp
 protected override void LoadContent()
 {
 	texture = Content.Load<Texture2D>("sprite");
 }
+```
 
 ## Playing Sounds
 
@@ -347,7 +553,6 @@ The following code shows how to play sounds in a MonoGame project:
 This code snippet demonstrates how to play sounds in a MonoGame project. The `SoundEffect` and `SoundEffectInstance` classes are used to load and play sound effects. You can load a sound effect from a file and create an instance to play it with options for volume, pitch, and looping.
 
 ```csharp
-// The following code is a C# code block
 protected override void LoadContent()
 {
 	soundEffect = Content.Load<SoundEffect>("sound");
@@ -364,7 +569,6 @@ The following code shows how to create a sprite sheet animation in a MonoGame pr
 This code snippet demonstrates how to create a sprite sheet animation in a MonoGame project. A sprite sheet is a single image file that contains multiple frames of an animation. By specifying the source rectangle for each frame, you can animate the sprite by changing the displayed frame over time.
 
 ```csharp
-// The following code is a C# code block
 protected override void Update(GameTime gameTime)
 {
 	elapsedTime += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -395,7 +599,6 @@ The following code shows how to implement collision detection in a MonoGame proj
 This code snippet demonstrates how to implement collision detection in a MonoGame project. You can check for collisions between game objects by comparing their bounding boxes or shapes. By using methods like `Intersects` or `Contains`, you can detect when objects overlap and respond accordingly.
 
 ```csharp
-// The following code is a C# code block
 protected override void Update(GameTime gameTime)
 {
 	if (playerRect.Intersects(enemyRect))
@@ -413,7 +616,6 @@ The following code shows how to implement a camera in a MonoGame project:
 This code snippet demonstrates how to implement a camera in a MonoGame project. A camera is used to control the view of the game world and can be moved, rotated, or zoomed to focus on different areas. By adjusting the camera's position and projection matrix, you can create scrolling, zooming, or parallax effects.
 
 ```csharp
-// The following code is a C# code block
 protected override void Update(GameTime gameTime)
 {
 	camera.Position = player.Position - 
@@ -431,5 +633,41 @@ protected override void Draw(GameTime gameTime)
 	base.Draw(gameTime);
 }
 ```
+
+## Creating a Tilemap
+
+The following code demonstrates how to create and render a tilemap in MonoGame:
+
+// Tilemap code goes here
+
+## Implementing a HUD
+
+Here's how to implement a basic heads-up display (HUD) in MonoGame:
+
+// HUD code goes here
+
+## Creating a Menu System
+
+Example of implementing a menu system in MonoGame:
+
+// Menu system code goes here
+
+## Implementing a Finite State Machine
+
+Example of a simple finite state machine implementation:
+
+// Finite state machine code goes here
+
+## Creating a Particle System
+
+Implementation of a basic particle system:
+
+// Particle system code goes here
+
+## Implementing Pathfinding
+
+Example of A* pathfinding implementation:
+
+// Pathfinding code goes here
 
 These code samples cover some of the essential aspects of MonoGame development, including the game loop, drawing sprites, handling input, loading content, playing sounds, creating animations, implementing collision detection, and using a camera. You can use these examples as a starting point for your own MonoGame projects and customize them to suit your game's requirements.

@@ -1,0 +1,2 @@
+always surround code with `// code-start-csharp` and `// code-end-csharp`, replace csharp with for example bash or hlsl depending on the language used in the code block.
+always include comments in detail which walk the user through the code provided.

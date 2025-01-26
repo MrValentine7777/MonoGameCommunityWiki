@@ -2,6 +2,16 @@
 
 This section covers advanced concepts and techniques for MonoGame development. These topics assume you're already familiar with the basics covered in the [Getting Started](getting_started.md) guide and have explored the [Code Samples](code_samples.md).
 
+This page is not yet complete nor properly edited, it is currently an early version of its true self.
+
+
+## Table of Contents
+
+- [Performance Optimization](#performance-optimization)
+  - [Efficient Rendering](#efficient-rendering)
+  - [Content Pipeline Optimization](#content-pipeline-optimization)
+  - [Memory Management](#memory-management)
+
 ## Performance Optimization
 
 ### Efficient Rendering
@@ -11,6 +21,7 @@ This section covers advanced concepts and techniques for MonoGame development. T
 - Implement culling for off-screen objects
 
 Example of efficient SpriteBatch usage:
+
 ```csharp
 protected override void Draw(GameTime gameTime)
 {
@@ -160,6 +171,7 @@ private async Task LoadAssetsAsync()
 
 ### Parallel Processing
 Example of parallel processing for performance:
+
 ```csharp
 Parallel.For(0, 100, i =>
 {
@@ -169,6 +181,7 @@ Parallel.For(0, 100, i =>
 
 ### Background Processing
 Example of background physics calculations:
+
 ```csharp
 Task.Run(() =>
 {
@@ -270,4 +283,3 @@ foreach (var entityA in entities)
 - [Real-Time Rendering](http://www.realtimerendering.com/)
 
 Remember to profile your game regularly and optimize only when necessary. Focus on maintaining clean, maintainable code first, then optimize the critical paths that affect performance.
-
