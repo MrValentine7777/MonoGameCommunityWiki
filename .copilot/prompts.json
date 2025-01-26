@@ -1,0 +1,16 @@
+{
+  "prompts": [
+    {
+      "trigger": "basic-game-loop",
+      "prompt": "Create a basic game loop for a MonoGame project."
+    },
+    {
+      "trigger": "draw-sprite",
+      "prompt": "Show how to draw a sprite using MonoGame."
+    },
+    {
+      "trigger": "handle-input",
+      "prompt": "Demonstrate how to handle keyboard and gamepad input in MonoGame."
+    }
+  ]
+}

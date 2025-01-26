@@ -1,0 +1,8 @@
+{
+  "alwaysIncludeComments": true,
+  "defaultLanguage": "csharp",
+  "codeStyle": {
+    "indentation": "spaces",
+    "indentSize": 4
+  }
+}

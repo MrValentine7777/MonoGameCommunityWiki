@@ -1,0 +1,8 @@
+   {
+     "settings": {
+       "enableCodeCompletion": true,
+       "enableInlineSuggestions": true,
+       "maxSuggestions": 7
+     }
+   }
+   
