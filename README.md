@@ -2,13 +2,13 @@
 
 Welcome to the MonoGame Community Wiki! This repository serves as a comprehensive resource for developers working with the MonoGame Framework. Here you'll find tutorials, code samples, and best practices to help you create amazing games, or tools.
 
-## Some History
+### Some History
 
 I initially began this project on my own services, which was expensive, and also, risky. I decided to move it to GitHub, where it can be maintained by the community, and also, be more accessible to everyone. I hope this project will be a success, and that it will help many people.
 
 I will copy across the original files from the previous wiki and link the domain name to this repository in the coming weeks.
 
-## Some Advisory
+### Some Advisory
 
 I utilise GitHub Copilot to help me write this wiki, take that into account when utilising any code here. I will try to make sure that the code is correct, but I am only human, and I can make mistakes.
 
@@ -27,6 +27,6 @@ The beauty of this being on GitHub is that you can contribute to this Wiki. If y
 - [Advanced Topics](docs/advanced_topics.md)
 - [Contributing](CONTRIBUTING.md)
 
-## License
+### License
 
 This project is licensed under the MIT License.
