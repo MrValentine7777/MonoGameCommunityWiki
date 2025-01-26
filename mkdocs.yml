@@ -1,0 +1,11 @@
+site_name: MonoGame Community Wiki
+nav:
+  - Home: index.md
+  - Getting Started: getting_started.md
+  - Code Samples: code_samples.md
+theme:
+  name: material
+markdown_extensions:
+  - codehilite
+  - toc:
+      permalink: true

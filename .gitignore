@@ -1,0 +1,44 @@
+# .gitignore for MonoGame Community Wiki
+
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore MonoGame content build directory
+Content/bin/
+Content/obj/
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Visual Studio Code settings
+.vscode/
+.vs/
+/.vs/CopilotSnapshots/A690A5A267A2394681B549EC79849F32/6703910ED4D966449C77DBF724E059DC/A337DC96008101B02D163B0C49E8E30C
+/.vs/CopilotSnapshots/A690A5A267A2394681B549EC79849F32/6703910ED4D966449C77DBF724E059DC/377D7B83E5228C7B46FB476807D43FBC
+/.vs/CopilotSnapshots/A690A5A267A2394681B549EC79849F32/6703910ED4D966449C77DBF724E059DC/7CD8722BFE25091A3326021F119CE666
+/.vs/CopilotSnapshots/A690A5A267A2394681B549EC79849F32/6703910ED4D966449C77DBF724E059DC/C6C0037F09CE47E6543105ABD2B29E27
+/.vs/CopilotSnapshots/A690A5A267A2394681B549EC79849F32/6703910ED4D966449C77DBF724E059DC/D35081BDE0D44FCB2031DA2AE9EBC1F0
+/.vs/CopilotSnapshots/A690A5A267A2394681B549EC79849F32/6703910ED4D966449C77DBF724E059DC/D8A478E15B2F6100F9A23604637185FA
+/.vs/CopilotSnapshots/A690A5A267A2394681B549EC79849F32/6703910ED4D966449C77DBF724E059DC/FF52EAE665544F9270D91CBEA6053112
+/.vs/CopilotSnapshots/A690A5A267A2394681B549EC79849F32/state.mpack
+/.vs/CopilotSnapshots/464600BDAA47864FB6BA7F3053DC68E0/A2F66D8DE2B91F4A9C07D90C51DA4F81/D35081BDE0D44FCB2031DA2AE9EBC1F0
+/.vs/CopilotSnapshots/464600BDAA47864FB6BA7F3053DC68E0/state.mpack
+/.vs/MonoGameCommunityWiki/copilot-chat/25595d96/sessions/a2a590a6-a267-4639-81b5-49ec79849f32
+/.vs/MonoGameCommunityWiki/copilot-chat/25595d96/sessions/bd004646-47aa-4f86-b6ba-7f3053dc68e0
+/.vs/MonoGameCommunityWiki/CopilotIndices/17.13.400.13238/CodeChunks.db
+/.vs/MonoGameCommunityWiki/CopilotIndices/17.13.400.13238/CodeChunks.db-shm
+/.vs/MonoGameCommunityWiki/CopilotIndices/17.13.400.13238/CodeChunks.db-wal
+/.vs/MonoGameCommunityWiki/CopilotIndices/17.13.400.13238/SemanticSymbols.db
+/.vs/MonoGameCommunityWiki/CopilotIndices/17.13.400.13238/SemanticSymbols.db-shm
+/.vs/MonoGameCommunityWiki/CopilotIndices/17.13.400.13238/SemanticSymbols.db-wal
+/.vs/MonoGameCommunityWiki/v17/DocumentLayout.json
+/.vs/ProjectSettings.json
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
