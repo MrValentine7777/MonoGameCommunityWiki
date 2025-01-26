@@ -1,5 +1,9 @@
 # Code Samples
 
+Here are some useful code samples to help you get started with MonoGame development.
+
+These code samples cover some of the essential aspects of MonoGame development, including the game loop, drawing sprites, handling input, loading content, playing sounds, creating animations, implementing collision detection, and using a camera. You can use these examples as a starting point for your own MonoGame projects and customize them to suit your game's requirements.
+
 ## Table of Contents
 - [Basic Game Loop](basic_game_loop.md)
 - [Anatomy of a MonoGame project](anatomy_of_a_monogame_project.md)
@@ -18,7 +22,3 @@
 - [Implementing a Finite State Machine](implementing_a_finite_state_machine.md)
 - [Creating a Particle System](creating_a_particle_system.md)
 - [Implementing Pathfinding](implementing_pathfinding.md)
-
-Here are some useful code samples to help you get started with MonoGame development.
-
-These code samples cover some of the essential aspects of MonoGame development, including the game loop, drawing sprites, handling input, loading content, playing sounds, creating animations, implementing collision detection, and using a camera. You can use these examples as a starting point for your own MonoGame projects and customize them to suit your game's requirements.
