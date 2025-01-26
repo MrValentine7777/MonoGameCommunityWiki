@@ -16,9 +16,8 @@ This template includes the essential components of a MonoGame project:
 
 The game loop automatically calls Update and Draw in sequence to create the game's runtime cycle. The `GameTime` parameter provides timing information for frame-rate independent game logic.
 
-
-// The following code is a C# code block
 ```csharp
+// The following code is a C# code block
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -59,14 +58,173 @@ namespace MyGame
 }
 ```
 
+## Anatomy of a MonoGame project
+
+The following code shows the detailed structure of a MonoGame project, including comprehensive setup options and explanations for each component:
+
+This template demonstrates a complete MonoGame project structure with the following key features:
+
+1. **Graphics Configuration**
+   - BackBuffer resolution setting
+   - Fullscreen toggle
+   - VSync control
+   - Graphics device management
+
+2. **Game Loop Methods**
+   - Initialize: For non-graphics initialization
+   - LoadContent: For loading game assets
+   - Update: For game logic (60 times per second by default)
+   - Draw: For rendering graphics
+   - UnloadContent: For cleanup
+
+3. **Game State Management**
+   - Basic state enum
+   - State-specific update and draw methods
+   - Clean separation of concerns
+
+4. **Input Handling**
+   - Keyboard and gamepad state checking
+   - Frame-independent timing
+   - Exit game functionality
+
+5. **Content Pipeline Integration**
+   - Content manager setup
+   - Example content loading patterns
+   - Resource management
+
+The code includes extensive comments explaining each section's purpose and usage, making it ideal for beginners to understand the structure of a MonoGame project. You can use this as a starting point and modify it according to your game's specific needs.
+
+```csharp
+// The following code is a C# code block
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+
+namespace MyGame
+{
+	public class Game1 : Game
+	{
+		private GraphicsDeviceManager _graphics;
+		private SpriteBatch _spriteBatch;
+		private enum GameState { MainMenu, Playing, Paused, GameOver }
+		private GameState _gameState = GameState.MainMenu;
+		public Game1()
+		{
+			_graphics = new GraphicsDeviceManager(this);
+			Content.RootDirectory = "Content";
+			IsMouseVisible = true;
+		}
+		protected override void Initialize()
+		{
+
+		base.Initialize();
+		}
+
+		protected override void LoadContent()
+		{
+			_spriteBatch = new SpriteBatch(GraphicsDevice);
+		}
+
+		protected override void UnloadContent()
+		{
+		}
+
+		protected override void Update(GameTime gameTime)
+		{
+			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+				Exit();
+			switch (_gameState)
+			{
+				case GameState.MainMenu:
+					UpdateMainMenu(gameTime);
+					break;
+				case GameState.Playing:
+					UpdatePlaying(gameTime);
+					break;
+				case GameState.Paused:
+					UpdatePaused(gameTime);
+					break;
+				case GameState.GameOver:
+					UpdateGameOver(gameTime);
+					break;
+			}
+			base.Update(gameTime);
+		}
+
+		protected override void Draw(GameTime gameTime)
+		{
+			GraphicsDevice.Clear(Color.CornflowerBlue);
+			_spriteBatch.Begin();
+			switch (_gameState)
+			{
+				case GameState.MainMenu:
+					DrawMainMenu(gameTime);
+					break;
+				case GameState.Playing:
+					DrawPlaying(gameTime);
+					break;
+				case GameState.Paused:
+					DrawPaused(gameTime);
+					break;
+				case GameState.GameOver:
+					DrawGameOver(gameTime);
+					break;
+			}
+			_spriteBatch.End();
+			base.Draw(gameTime);
+		}
+
+		private void UpdateMainMenu(GameTime gameTime)
+		{
+			// Update main menu logic
+		}
+
+		private void UpdatePlaying(GameTime gameTime)
+		{
+			// Update playing logic
+		}
+
+		private void UpdatePaused(GameTime gameTime)
+		{
+			// Update paused logic
+		}
+
+		private void UpdateGameOver(GameTime gameTime)
+		{
+			// Update game over logic
+		}
+
+		private void DrawMainMenu(GameTime gameTime)
+		{
+			// Draw main menu graphics
+		}
+
+		private void DrawPlaying(GameTime gameTime)
+		{
+			// Draw playing graphics
+		}
+
+		private void DrawPaused(GameTime gameTime)
+		{
+			// Draw paused graphics
+		}
+
+		private void DrawGameOver(GameTime gameTime)
+		{
+			// Draw game over graphics
+		}
+	}
+}
+```
+
 ## Drawing a Sprite
 
 The following code shows how to draw a sprite on the screen using a `Texture2D` object:
 
 This code snippet demonstrates how to draw a sprite on the screen using a `Texture2D` object. The `SpriteBatch` class is used to draw 2D graphics in MonoGame. The `Draw` method takes a `Texture2D` object, a position vector, and an optional color parameter. The `Begin` and `End` methods are used to start and finish the drawing process.
 
-// The following code is a C# code block
 ```csharp
+// The following code is a C# code block
 protected override void Draw(GameTime gameTime)
 {
 	GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -83,8 +241,8 @@ The following code shows how to handle input in a MonoGame project:
 
 This code snippet demonstrates how to handle input in a MonoGame project. The `Keyboard` and `GamePad` classes provide access to keyboard and gamepad input, respectively. You can check for specific keys or buttons being pressed, released, or held down to control your game logic.
 
-// The following code is a C# code block
 ```csharp
+// The following code is a C# code block
 protected override void Update(GameTime gameTime)
 {
 	if (GamePad.GetState(PlayerIndex.One).Buttons.Back == 
@@ -102,12 +260,10 @@ The following code shows how to load content in a MonoGame project:
 This code snippet demonstrates how to load content in a MonoGame project. The `ContentManager` class is used to load and manage game assets such as textures, fonts, and sounds. You can load content by specifying the asset file path and type, and then access it using the `Content` property.
 
 // The following code is a C# code block
-```csharp
 protected override void LoadContent()
 {
 	texture = Content.Load<Texture2D>("sprite");
 }
-```
 
 ## Playing Sounds
 
@@ -115,8 +271,8 @@ The following code shows how to play sounds in a MonoGame project:
 
 This code snippet demonstrates how to play sounds in a MonoGame project. The `SoundEffect` and `SoundEffectInstance` classes are used to load and play sound effects. You can load a sound effect from a file and create an instance to play it with options for volume, pitch, and looping.
 
-// The following code is a C# code block
 ```csharp
+// The following code is a C# code block
 protected override void LoadContent()
 {
 	soundEffect = Content.Load<SoundEffect>("sound");
@@ -132,8 +288,8 @@ The following code shows how to create a sprite sheet animation in a MonoGame pr
 
 This code snippet demonstrates how to create a sprite sheet animation in a MonoGame project. A sprite sheet is a single image file that contains multiple frames of an animation. By specifying the source rectangle for each frame, you can animate the sprite by changing the displayed frame over time.
 
-// The following code is a C# code block
 ```csharp
+// The following code is a C# code block
 protected override void Update(GameTime gameTime)
 {
 	elapsedTime += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -163,8 +319,8 @@ The following code shows how to implement collision detection in a MonoGame proj
 
 This code snippet demonstrates how to implement collision detection in a MonoGame project. You can check for collisions between game objects by comparing their bounding boxes or shapes. By using methods like `Intersects` or `Contains`, you can detect when objects overlap and respond accordingly.
 
-// The following code is a C# code block
 ```csharp
+// The following code is a C# code block
 protected override void Update(GameTime gameTime)
 {
 	if (playerRect.Intersects(enemyRect))
@@ -181,8 +337,8 @@ The following code shows how to implement a camera in a MonoGame project:
 
 This code snippet demonstrates how to implement a camera in a MonoGame project. A camera is used to control the view of the game world and can be moved, rotated, or zoomed to focus on different areas. By adjusting the camera's position and projection matrix, you can create scrolling, zooming, or parallax effects.
 
-// The following code is a C# code block
 ```csharp
+// The following code is a C# code block
 protected override void Update(GameTime gameTime)
 {
 	camera.Position = player.Position - 
@@ -202,40 +358,3 @@ protected override void Draw(GameTime gameTime)
 ```
 
 These code samples cover some of the essential aspects of MonoGame development, including the game loop, drawing sprites, handling input, loading content, playing sounds, creating animations, implementing collision detection, and using a camera. You can use these examples as a starting point for your own MonoGame projects and customize them to suit your game's requirements.
-```
-
-# More to come
-
-- [ ] Add more code samples
-- [ ] Add more tutorials
-- [ ] Add more resources
-- [ ] Add more projects
-- [ ] Add more tools
-- [ ] Add more extensions
-- [ ] Add more plugins
-- [ ] Add more libraries
-- [ ] Add more assets
-- [ ] Add more games
-- [ ] Add more templates
-- [ ] Add more examples
-- [ ] Add more snippets
-- [ ] Add more cheatsheets
-- [ ] Add more references
-- [ ] Add more articles
-- [ ] Add more videos
-- [ ] Add more courses
-- [ ] Add more books
-- [ ] Add more challenges
-- [ ] Add more interviews
-- [ ] Add more podcasts
-- [ ] Add more communities
-- [ ] Add more events
-- [ ] Add more meetups
-- [ ] Add more conferences
-- [ ] Add more workshops
-- [ ] Add more webinars
-- [ ] Add more bootcamps
-- [ ] Add more hackathons
-- [ ] Add more jams
-- [ ] Add more competitions
-- [ ] Add more showcases
