@@ -149,6 +149,18 @@ namespace MyGame
 				case GameState.GameOver:
 					UpdateGameOver(gameTime);
 					break;
+				case GameState.Loading:
+				// Update loading logic
+					break;
+				case GameState.Options:
+				// Update options logic
+					break;
+				case GameState.Scores:
+				// Update scores logic
+					break;
+				case GameState.Credits:
+				// Update credits logic
+					break;
 			}
 			base.Update(gameTime);
 		}
@@ -170,6 +182,18 @@ namespace MyGame
 					break;
 				case GameState.GameOver:
 					DrawGameOver(gameTime);
+					break;
+				case GameState.Loading:
+				// Draw loading graphics
+					break;
+				case GameState.Options:
+				// Draw options graphics
+					break;
+				case GameState.Scores:
+				// Draw scores graphics
+					break;
+				case GameState.Credits:
+				// Draw credits graphics
 					break;
 			}
 			_spriteBatch.End();
@@ -214,6 +238,50 @@ namespace MyGame
 		private void DrawGameOver(GameTime gameTime)
 		{
 			// Draw game over graphics
+		}
+
+
+		public enum GameState
+		{
+			/// <summary>
+			/// The main menu state where players can start new game, load game, or quit
+			/// </summary>
+			MainMenu,
+
+			/// <summary>
+			/// The active gameplay state where the main game loop runs
+			/// </summary>
+			Playing,
+    
+			/// <summary>
+			/// Paused state where gameplay is suspended but game is still running
+			/// </summary>
+			Paused,
+    
+			/// <summary>
+			/// Game over state when player has lost or completed the game
+			/// </summary>
+			GameOver,
+    
+			/// <summary>
+			/// Loading state for transitions between major game sections
+			/// </summary>
+			Loading,
+    
+			/// <summary>
+			/// Options/settings menu state
+			/// </summary>
+			Options,
+    
+			/// <summary>
+			/// High score or achievements display state
+			/// </summary>
+			Scores,
+    
+			/// <summary>
+			/// Credits display state
+			/// </summary> 
+			Credits
 		}
 	}
 }
