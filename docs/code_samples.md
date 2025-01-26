@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 # Code Samples
 
 Here are some useful code samples to help you get started with MonoGame development.
@@ -22,3 +24,5 @@ These code samples cover some of the essential aspects of MonoGame development, 
 - [Implementing a Finite State Machine](implementing_a_finite_state_machine.md)
 - [Creating a Particle System](creating_a_particle_system.md)
 - [Implementing Pathfinding](implementing_pathfinding.md)
+
+[← Back to Index](index.md)

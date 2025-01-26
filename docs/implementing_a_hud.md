@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 # Implementing a HUD
 
 ## Table of Contents
@@ -18,3 +20,5 @@ This guide demonstrates how to implement a basic heads-up display (HUD) in MonoG
 Here's how to implement a basic heads-up display (HUD) in MonoGame:
 
 // HUD code goes here
+
+[← Back to Index](index.md)

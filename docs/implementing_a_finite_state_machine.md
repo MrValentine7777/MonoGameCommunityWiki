@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 # Implementing a Finite State Machine
 
 ## Table of Contents
@@ -18,3 +20,5 @@ This guide demonstrates how to implement a simple finite state machine in MonoGa
 Example of a simple finite state machine implementation:
 
 // Finite state machine code goes here
+
+[← Back to Index](index.md)

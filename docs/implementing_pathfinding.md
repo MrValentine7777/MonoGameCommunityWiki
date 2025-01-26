@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 # Implementing Pathfinding
 
 ## Table of Contents
@@ -31,3 +33,5 @@ Example of A* pathfinding implementation:
 ## Usage Examples
 
 ## Additional Considerations
+
+[← Back to Index](index.md)

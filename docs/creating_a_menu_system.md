@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 # Creating a Menu System
 
 ## Table of Contents
@@ -18,3 +20,5 @@ This guide demonstrates how to implement a menu system in MonoGame.
 Example of implementing a menu system in MonoGame:
 
 // Menu system code goes here
+
+[← Back to Index](index.md)

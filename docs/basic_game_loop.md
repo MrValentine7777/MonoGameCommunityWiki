@@ -1,3 +1,5 @@
+﻿[← Back to Index](index.md)
+
 ## Basic Game Loop
 
 The following code shows the basic structure of a MonoGame project's main game class:
@@ -12,7 +14,6 @@ This template includes the essential components of a MonoGame project:
 
 The game loop automatically calls Update and Draw in sequence to create the game's runtime cycle. The `GameTime` parameter provides timing information for frame-rate independent game logic.
 
-```csharp
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -51,4 +52,10 @@ namespace MyGame
 		}
 	}
 }
-```
+
+This template provides a starting point for your MonoGame project. You can add additional functionality to the `Update` and `Draw` methods to create your game logic and graphics rendering.
+
+For more advanced game development topics, refer to the other guides in the documentation.
+
+[← Back to Index](index.md)
+
