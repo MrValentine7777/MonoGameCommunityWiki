@@ -2,6 +2,8 @@
 
 Welcome to the MonoGame Community Wiki! This repository serves as a comprehensive resource for developers working with the MonoGame Framework. Here you'll find tutorials, code samples, and best practices to help you create amazing games, or tools.
 
+![MonoGame Logo](content/monogame_box_art_fixed.webp)
+
 ## Table of Contents
 
 - [Getting Started](docs/getting_started.md)
