@@ -20,7 +20,8 @@ Started in 2024, so, these are very fresh.
 
 Link to source: https://medium.com/@gabriel.enrique.digiorgio
 
-Archived on Wiki copy: [[tutorials:garank|Garanks Tutorials]]
+Archived on Wiki copy: [Garank Tutorials](https://monogamecommunity.wiki/doku.php?id=garank:garank)
+
 
 ----
 
