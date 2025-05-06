@@ -2,8 +2,40 @@
 
 Below is a collection of permitted copies of Garanks tutorials from their Medium account, see: <a href="../tutorials/tutorials.md"> Tutorials.md</a> for the base source link.
 
+## Table of Contents
+
+### Simple Triangle Tutorial
+- [How to create a simple triangle in Monogame/XNA](#how-to-create-a-simple-triangle-in-monogamexna)
+  - [Introduction](#introduction)
+  - [Setting Up the Game Environment](#setting-up-the-game-environment)
+  - [Vertices](#vertices)
+  - [Vertex Buffer](#vertex-buffer)
+  - [Drawing the triangle](#drawing-the-triangle)
+
+### Water Shader Tutorial
+- [How to create Water shader in Monogame/XNA](#how-to-create-water-shader-in-monogamexna)
+  - [Introduction](#introduction-1)
+  - [The basics](#the-basics)
+  - [Drawing](#drawing)
+  - [Setting up the code](#setting-up-the-code)
+  - [Planar Reflections](#planar-reflections)
+  - [Reflection Camera Position](#reflection-camera-position)
+  - [Reflection Camera View Matrix](#reflection-camera-view-matrix)
+  - [Drawing the Reflection](#drawing-the-reflection)
+  - [Clipping Planes](#clipping-planes)
+  - [Refraction](#refraction)
+  - [Water Shader](#water-shader)
+  - [Vertex Shader](#vertex-shader)
+  - [Pixel Shader](#pixel-shader)
+    - [Projective Texture Mapping](#projective-texture-mapping)
+    - [Distortion Map / DuDv Map](#distortion-map--dudv-map)
+    - [Moving the waves](#moving-the-waves)
+    - [Fresnel](#fresnel)
+    - [Normal Maps](#normal-maps)
+    - [Lighting](#lighting)
 
 ----
+
 # How to create a simple triangle in Monogame/XNA
 
 Mar 29, 2024
