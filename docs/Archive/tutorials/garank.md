@@ -188,7 +188,10 @@ In this method call, ''%%PrimitiveType.TriangleList%%'' specifies the type of pr
 
 With this setup, our triangle should now be displayed on the screen using the specified shader and parameters.
 
-{{ :tutorials:garank:1_y0prqffpsunj3llyjaisha.webp?direct  |Red triangle}}
+<a href="../../../content/tutorials/garank/1_y0prqffpsunj3llyjaisha.webp" download>
+  <img src="../../../content/tutorials/garank/1_y0prqffpsunj3llyjaisha.webp" alt="Red triangle" width="400" />
+</a>
+
 __Red triangle__
 
 ----
@@ -276,7 +279,9 @@ protected override void Initialize()
 
 Before we proceed with our code, we need to understand how planar reflections work. Here’s an example of what a planar reflection looks like:
 
-{{ :tutorials:garank:1_pejesfe49mymteta1nhcrg.webp?direct | Planar reflection graphical example}}
+<a href="../../../content/tutorials/garank/1_pejesfe49mymteta1nhcrg.webp" download>
+  <img src="../../../content/tutorials/garank/1_pejesfe49mymteta1nhcrg.webp" alt="Planar reflection graphical example" width="400" />
+</a>
 
 __Planar reflection graphical example__
 
@@ -290,10 +295,9 @@ First, we’ll be calculating the //Reflection Camera Position//. We already kno
 
 ```csharp
 View Direction = Camera Position — Plane Position
-```
-
-{{ :tutorials:garank:1_jyfhc1_5dbxgllx6zrb3xg.webp?direct | View direction vector}}
-
+<a href="../../../content/tutorials/garank/1_jyfhc1_5dbxgllx6zrb3xg.webp" download>
+  <img src="../../../content/tutorials/garank/1_jyfhc1_5dbxgllx6zrb3xg.webp" alt="View direction vector" width="400" />
+</a>
 __View direction vector__
 
 As you can see I’ve also added another vector wich is the //Projection vector//. Then we can use the //length// of that projection to find the distance to that point in the plane.
@@ -539,7 +543,9 @@ In this shader, the uniforms ''%%KSpecular%%'', ''%%Shininess%%'', ''%%LightPosi
 
 For the //Distortion Map// we’ll use a texture that looks like this:
 
-{{ :tutorials:garank:1_ant9-odsyiryo7ty_utx1w.webp?direct | Distortion Map Texture}}
+<a href="../../../content/tutorials/garank/1_ant9-odsyiryo7ty_utx1w.webp" download>
+  <img src="../../../content/tutorials/garank/1_ant9-odsyiryo7ty_utx1w.webp" alt="Distortion Map Texture" width="400" />
+</a>
 
 __Distortion Map Texture__
 
@@ -547,7 +553,9 @@ By using this texture we can //distort// the //texturee coordinates//, creating 
 
 For the //Normal Map// we’ll use another texture, like this:
 
-{{ :tutorials:garank:1_mz-hrsldcrhz5adzjfxeig.webp?direct | Normal Map Texture}}
+<a href="../../../content/tutorials/garank/1_mz-hrsldcrhz5adzjfxeig.webp" download>
+  <img src="../../../content/tutorials/garank/1_mz-hrsldcrhz5adzjfxeig.webp" alt="Normal Map Texture" width="400" />
+</a>
 
 __Normal Map Texture__
 
@@ -803,8 +811,9 @@ Matrix reflectionView, GameTime gameTime)
 
 And in my case it looks something like this:
 
-{{ :tutorials:garank:1_ap6ogdzbeuwqwzyccmntea.webp?direct | A cube, a teapot and a torus on the water.
-}}
+<a href="../../../content/tutorials/garank/1_ap6ogdzbeuwqwzyccmntea.webp" download>
+  <img src="../../../content/tutorials/garank/1_ap6ogdzbeuwqwzyccmntea.webp" alt="A cube, a teapot and a torus on the water" width="400" />
+</a>
 
 __A cube, a teapot and a torus on the water.__
 
