@@ -340,6 +340,7 @@ First, we’ll be calculating the *Reflection Camera Position*. We already know 
 
 
 View Direction = Camera Position — Plane Position
+
 <a href="../../../content/tutorials/garank/1_jyfhc1_5dbxgllx6zrb3xg.webp" download>
   <img src="../../../content/tutorials/garank/1_jyfhc1_5dbxgllx6zrb3xg.webp" alt="View direction vector" width="400" />
 </a>
