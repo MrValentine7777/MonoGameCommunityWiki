@@ -20,7 +20,7 @@ Started in 2024, so, these are very fresh.
 
 Link to source: https://medium.com/@gabriel.enrique.digiorgio
 
-Archived on Wiki copy: [Garank Tutorials](../garank.md)
+Archived on Wiki copy: [Garank Tutorials](../../garank.md)
 
 
 ----
