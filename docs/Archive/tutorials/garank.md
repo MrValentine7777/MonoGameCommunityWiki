@@ -869,7 +869,7 @@ Matrix reflectionView, GameTime gameTime)
 
 And in my case it looks something like this:
 
-<a href="../../../content/tutorials/garank/1_ap6ogdzbeuwqwzyccmntea.webp">
+<a href="../../../content/tutorials/garank/1_ap6ogdzbeuwqwzyccmntea.webp" download>
   <img src="../../../content/tutorials/garank/1_ap6ogdzbeuwqwzyccmntea.webp" alt="A cube, a teapot and a torus on the water" width="400" />
 </a>
 
