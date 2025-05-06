@@ -1,6 +1,6 @@
 ====== Garanks Tutorials ======
 
-Below is a collection of permitted copies of Garanks tutorials from their Medium account, see [[tutorials:tutorials|Tutorials]] for the base source link.
+Below is a collection of permitted copies of Garanks tutorials from their Medium account, see: <a href="../tutorials/tutorials.md"> Tutorials.md</a> for the base source link.
 
 
 ----
