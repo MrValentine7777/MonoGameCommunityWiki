@@ -1,22 +1,22 @@
-====== Garanks Tutorials ======
+# Garanks Tutorials
 
 Below is a collection of permitted copies of Garanks tutorials from their Medium account, see: <a href="../tutorials/tutorials.md"> Tutorials.md</a> for the base source link.
 
 
 ----
-====== How to create a simple triangle in Monogame/XNA ======
+# How to create a simple triangle in Monogame/XNA
 
 Mar 29, 2024
 
 Source: https://medium.com/@gabriel.enrique.digiorgio/how-to-create-water-shader-in-monogame-xna-0a7e82092c85
 
-===== Introduction =====
+## Introduction
 
-In this tutorial, we’ll cover one of the //fundamental// building blocks of 3D and 2D graphics: creating a simple triangle. Whether you’re a beginner eager to dive into the realm of game programming or an experienced developer seeking to refresh your skills, understanding how to generate basic shapes like a triangle lays a solid foundation for more complex designs.
+In this tutorial, we’ll cover one of the *fundamental* building blocks of 3D and 2D graphics: creating a simple triangle. Whether you’re a beginner eager to dive into the realm of game programming or an experienced developer seeking to refresh your skills, understanding how to generate basic shapes like a triangle lays a solid foundation for more complex designs.
 
-===== Setting Up the Game Environment =====
+## Setting Up the Game Environment
 
-Before we dive into creating our triangle, let’s set up our game environment. In the ''%%Initialize%%'' method, we initialize our view and projection matrices, which are essential for rendering objects in a 3D space.
+Before we dive into creating our triangle, let’s set up our game environment. In the <b>`Initialize`</b> method, we initialize our view and projection matrices, which are essential for rendering objects in a 3D space.
 
 ```csharp
 private Matrix _view;
@@ -38,9 +38,9 @@ protected override void Initialize()
 }
 ```
 
-===== Vertices =====
+## Vertices
 
-In order to create a triangle we’ll need to declare our vertices. To do this, we’ll simply create an array to store them in the ''%%Initialize%%'' method.
+In order to create a triangle we’ll need to declare our vertices. To do this, we’ll simply create an array to store them in the <b>`Initialize`</b> method.
 
 ```csharp
 protected override void Initialize()
@@ -56,9 +56,9 @@ protected override void Initialize()
 }
 ```
 
-In this example I’ve used ''%%VertexPosition%%'' to only send information about the position of the vertex, but you can also use ''%%VertexPositionColor%%'' (where you can also send information about color), ''%%VertexPositionColorNormal%%'', etc.
+In this example I’ve used <b>`VertexPosition`</b> to only send information about the position of the vertex, but you can also use <b>`VertexPositionColor`</b> (where you can also send information about color), <b>`VertexPositionColorNormal`</b>, etc.
 
-===== Vertex Buffer =====
+## Vertex Buffer
 
 To begin with, we need to set up a vertex buffer. This structure is responsible for storing a large number of vertices in the GPU’s memory.
 
@@ -82,15 +82,15 @@ protected override void Initialize()
 }
 ```
 
-In the provided code snippet, we initialize the vertex buffer ''%%_vertexBuffer%%'' with an array of ''%%VertexPosition%%'' objects. Each ''%%VertexPosition%%'' specifies a position in 3D space using a ''%%Vector3%%'' coordinate. For simplicity, we define a triangle with three vertices positioned at (-1, 0, -1), (-1, 0, 1), and (1, 0, -1) respectively.
+In the provided code snippet, we initialize the vertex buffer <b>`_vertexBuffer`</b> with an array of <b>`VertexPosition`</b> objects. Each <b>`VertexPosition`</b> specifies a position in 3D space using a <b>`Vector3`</b> coordinate. For simplicity, we define a triangle with three vertices positioned at (-1, 0, -1), (-1, 0, 1), and (1, 0, -1) respectively.
 
-Once the vertex data is defined, we create the ''%%VertexBuffer%%'' object using the ''%%GraphicsDevice%%'' and specify the vertex declaration (''%%VertexPosition.VertexDeclaration%%''). The buffer is allocated with enough space to store three vertices (3 in this case), and the vertex data is set using the ''%%SetData%%'' method.
+Once the vertex data is defined, we create the <b>`VertexBuffer`</b> object using the <b>`GraphicsDevice`</b> and specify the vertex declaration (<b>`VertexPosition.VertexDeclaration`</b>). The buffer is allocated with enough space to store three vertices (3 in this case), and the vertex data is set using the <b>`SetData`</b> method.
 
-===== Drawing the triangle =====
+## Drawing the triangle
 
 Now, let’s proceed with rendering our triangle. In the code snippet below, we’ll integrate our basic shader and define how the triangle will be drawn.
 
-Firstly, we need to have a shader and load it, using the ''%%LoadContent%%'' method. We’ll create a “BasicShader” which is a straightforward shader that defines basic transformations and coloring for our vertices. It consists of a vertex shader and a pixel shader.
+Firstly, we need to have a shader and load it, using the <b>`LoadContent`</b> method. We’ll create a “BasicShader” which is a straightforward shader that defines basic transformations and coloring for our vertices. It consists of a vertex shader and a pixel shader.
 
 ```csharp
 public const string ContentFolderEffects = "Effects/";
@@ -147,7 +147,7 @@ technique BasicColorDrawing
 };
 ```
 
-Now, let’s move on to drawing the triangle in the ''%%Draw%%'' method:
+Now, let’s move on to drawing the triangle in the <b>`Draw`</b> method:
 
 ```csharp
 protected override void Draw(GameTime gameTime)
@@ -180,11 +180,11 @@ protected override void Draw(GameTime gameTime)
 }
 ```
 
-In this ''%%Draw%%'' method, we start by clearing the screen with a black color. Then, we set up our shader parameters such as the world, view, and projection matrices, along with the diffuse color. We also configure the rasterizer state to ensure proper rendering.
+In this <b>`Draw`</b> method, we start by clearing the screen with a black color. Then, we set up our shader parameters such as the world, view, and projection matrices, along with the diffuse color. We also configure the rasterizer state to ensure proper rendering.
 
-Next, we set the vertex buffer to define the geometry we want to draw. Finally, within the loop iterating over each pass of our shader technique, we apply the shader and use ''%%DrawPrimitives%%'' to render the triangle defined by our vertex buffer.
+Next, we set the vertex buffer to define the geometry we want to draw. Finally, within the loop iterating over each pass of our shader technique, we apply the shader and use <b>`DrawPrimitives`</b> to render the triangle defined by our vertex buffer.
 
-In this method call, ''%%PrimitiveType.TriangleList%%'' specifies the type of primitive being drawn, which in this case is a triangle. The second parameter, ''%%0%%'', indicates the starting index in the vertex buffer from which vertices will be fetched for drawing. Lastly, ''%%1%%'' specifies the number of primitives to draw. Here, we're drawing a single triangle, but this number can be increased to draw multiple primitives. This method is crucial for converting vertex data into visual geometry on the screen.
+In this method call, <b>`PrimitiveType.TriangleList`</b> specifies the type of primitive being drawn, which in this case is a triangle. The second parameter, <b>`0`</b>, indicates the starting index in the vertex buffer from which vertices will be fetched for drawing. Lastly, <b>`1`</b> specifies the number of primitives to draw. Here, we're drawing a single triangle, but this number can be increased to draw multiple primitives. This method is crucial for converting vertex data into visual geometry on the screen.
 
 With this setup, our triangle should now be displayed on the screen using the specified shader and parameters.
 
@@ -197,9 +197,9 @@ __Red triangle__
 ----
 ----
 
-====== How to create Water shader in Monogame/XNA ======
+# How to create Water shader in Monogame/XNA
 
-[Some editing of the code blocks made to avoid side scrolling on desktops]
+**[Some editing of the code blocks made to void side scrolling on desktops]**
 
 May 20, 2024
 
@@ -209,35 +209,35 @@ Video: https://youtu.be/ICX9RCThTH8
 
 GitHub: https://github.com/gabdigiorgio/water
 
-===== Introduction =====
+## Introduction
 
-In this article we’ll cover the basics on creating a simple water shader in Monogame/XNA. This shader will make use of: //planar reflections//, //refraction//, //Fresnel effect// and //specular highlights//. At the time of writing, it was done with //Monogame version 3.8.1//. Here’s the [[https://github.com/gabdigiorgio/water|source code]] if you want to examine every aspect of it in detail.
+In this article we’ll cover the basics on creating a simple water shader in Monogame/XNA. This shader will make use of: *planar reflections*, *refraction*, *Fresnel effect* and *specular highlights*. At the time of writing, it was done with *Monogame version 3.8.1*. Here’s the [source code](https://github.com/gabdigiorgio/water) if you want to examine every aspect of it in detail.
 
-===== The basics =====
+## The basics
 
 To understand better how our shader works we’re gonna split it up in a few steps:
 
-  * Adding a //quad///flat surface.
-  * Adding a //reflection// and //refraction// texture (lerping between them using Fresnel effect).
-  * Simulate small waves with a //distortion map//.
-  * Adding a //normal map// for //specular// highlights.
+  - Adding a *quad*/flat surface.
+  - Adding a *reflection* and *refraction* texture (lerping between them using Fresnel effect).
+  - Simulate small waves with a *distortion map*.
+  - Adding a *normal map* for *specular* highlights.
 
-===== Drawing =====
+## Drawing
 
 The sequence of rendering steps is as follows:
 
-  - Drawing the //refraction//
-  - Drawing the //reflection//
-  - Drawing the //water//
-  - Drawing //other objects// in the scene
+  - Drawing the *refraction*
+  - Drawing the *reflection*
+  - Drawing the *water*
+  - Drawing *other objects* in the scene
 
 This order ensures that each component is rendered in the correct sequence to achieve the desired visual effect.
 
-===== Setting up the code =====
+## Setting up the code
 
-In order to correctly achieve our water shader technique, we’ll need to set up some things in our code. To simplify the explanation I’ll use an already defined class called ''%%QuadPrimitive%%'' that will have a vertex buffer (sending information about normals and texture coordinates) and, of course, an index buffer. I’ll also use a ''%%FreeCamera%%'' class to handle our camera movement, though we won't delve into its details as it's not the focus of this tutorial.
+In order to correctly achieve our water shader technique, we’ll need to set up some things in our code. To simplify the explanation I’ll use an already defined class called <b>`QuadPrimitive`</b> that will have a vertex buffer (sending information about normals and texture coordinates) and, of course, an index buffer. I’ll also use a <b>`FreeCamera`</b> class to handle our camera movement, though we won't delve into its details as it's not the focus of this tutorial.
 
-Firstly we will //create// our //quad//, its //world matrix//, its //height// and the //wave speed//. We will use the wave speed later on the shader parameters. Also, this height will be important when calculating the reflection and refraction. Additionally, we’ll declare our shader
+Firstly we will *create* our *quad*, its *world matrix*, its *height* and the *wave speed*. We will use the wave speed later on the shader parameters. Also, this height will be important when calculating the reflection and refraction. Additionally, we’ll declare our shader
 
 ```csharp
 // Camera
@@ -252,7 +252,7 @@ private Matrix _quadWorld;
 private Effect _waterShader;
 ```
 
-And our ''%%Initialize%%'' method should look something like this:
+And our <b>`Initialize`</b> method should look something like this:
 
 ```csharp
 protected override void Initialize()        
@@ -275,7 +275,7 @@ protected override void Initialize()
 }
 ```
 
-===== Planar Reflections =====
+## Planar Reflections
 
 Before we proceed with our code, we need to understand how planar reflections work. Here’s an example of what a planar reflection looks like:
 
@@ -285,24 +285,25 @@ Before we proceed with our code, we need to understand how planar reflections wo
 
 __Planar reflection graphical example__
 
-In this example we can see that, given a a //reflective plane//, a //camera// and some object, the //reflection// should look something like that.
+In this example we can see that, given a a *reflective plane*, a *camera* and some object, the *reflection* should look something like that.
 
-To translate this later to code we need to calculate a new view matrix from the point of view of the //Reflection Camera// (the one under the reflective plane).
+To translate this later to code we need to calculate a new view matrix from the point of view of the *Reflection Camera* (the one under the reflective plane).
 
-==== Reflection Camera Position ====
+## Reflection Camera Position
 
-First, we’ll be calculating the //Reflection Camera Position//. We already know the //Camera Position//, the //Plane Position// and the //Plane Normal//, so if we substract the Plane Position from the Camera position, we obtain the //View Direction vector//:
+First, we’ll be calculating the *Reflection Camera Position*. We already know the *Camera Position*, the *Plane Position* and the *Plane Normal*, so if we substract the Plane Position from the Camera position, we obtain the *View Direction vector*:
 
-```csharp
+
 View Direction = Camera Position — Plane Position
 <a href="../../../content/tutorials/garank/1_jyfhc1_5dbxgllx6zrb3xg.webp" download>
   <img src="../../../content/tutorials/garank/1_jyfhc1_5dbxgllx6zrb3xg.webp" alt="View direction vector" width="400" />
 </a>
+
 __View direction vector__
 
-As you can see I’ve also added another vector wich is the //Projection vector//. Then we can use the //length// of that projection to find the distance to that point in the plane.
+As you can see I’ve also added another vector wich is the *Projection vector*. Then we can use the *length* of that projection to find the distance to that point in the plane.
 
-With that, we now have a rectangular triangle. The //Projection Length// should be equal to:
+With that, we now have a rectangular triangle. The *Projection Length* should be equal to:
 
 ```csharp
 Projection Length = View Direction * cos(Angle)
@@ -316,27 +317,27 @@ To simplify it we can rewrite it like this:
 Projection Length = Dot Product(Plane Normal, View Direction)
 ```
 
-Great, now we have the Projection Lenght. We can use that to obtain the //Reflection Camera Position//:
+Great, now we have the Projection Lenght. We can use that to obtain the *Reflection Camera Position*:
 
 ```csharp
 Reflection Camera Position = Camera Position — 2 * Plane Normal * Projection Length
 ```
 
-==== Reflection Camera View Matrix ====
+## Reflection Camera View Matrix
 
-In order to achieve the Reflection Camera View Matrix, we’ll need to calculate the //Reflection Camera Forward//. We can use the function ''%%Reflect(vector, normal)%%'' to get the reflection of a vector off a surface that has the specified normal.
+In order to achieve the Reflection Camera View Matrix, we’ll need to calculate the *Reflection Camera Forward*. We can use the function <b>`Reflect(vector, normal)`</b> to get the reflection of a vector off a surface that has the specified normal.
 
 ```csharp
 Reflection Camera Forward = Vector3.Reflect(Camera Forward, Plane Normal)
 ```
 
-After calculating the //Reflection Camera Forward//, the next step is to compute the //Reflection Camera Up//. We’ll again use the ''%%Vector3.Reflect%%'' function to reflect the camera's up vector off the plane's normal.
+After calculating the *Reflection Camera Forward*, the next step is to compute the *Reflection Camera Up*. We’ll again use the <b>`Vector3.Reflect`</b> function to reflect the camera's up vector off the plane's normal.
 
 ```csharp
 Reflection Camera Up = Vector3.Reflect(Camera Up, Plane Normal)
 ```
 
-With both the //Reflection Camera Position//, //Reflection Camera Forward// and //Reflection Camera Up// vectors calculated, we now have all the components necessary to construct the //Reflection Camera View Matrix//.
+With both the *Reflection Camera Position*, *Reflection Camera Forward* and *Reflection Camera Up* vectors calculated, we now have all the components necessary to construct the *Reflection Camera View Matrix*.
 
 ```csharp
 Reflection Camera View = 
@@ -347,9 +348,9 @@ Reflection Camera Forward,
 Reflection Camera Position)
 ```
 
-===== Drawing the Reflection =====
+## Drawing the Reflection
 
-Now that we’ve calculated the necessary components for the Reflection Camera View Matrix, we can proceed to //draw the reflection onto a texture//, typically a ''%%RenderTarget2D%%''. To accomplish this in our code, we can integrate the previously calculated values into our rendering process. The following snippet demonstrates how this can be achieved:
+Now that we’ve calculated the necessary components for the Reflection Camera View Matrix, we can proceed to *draw the reflection onto a texture*, typically a <b>`RenderTarget2D`</b>. To accomplish this in our code, we can integrate the previously calculated values into our rendering process. The following snippet demonstrates how this can be achieved:
 
 ```csharp
  private void DrawReflection(Matrix world, Matrix view, Matrix projection, GameTime gameTime)
@@ -381,21 +382,21 @@ Now that we’ve calculated the necessary components for the Reflection Camera V
 }
 ```
 
-In the ''%%DrawWater%%'' method we’ll pass the necessary parameters, which we’ll delve into in detail later.
+In the <b>`DrawWater`</b> method we’ll pass the necessary parameters, which we’ll delve into in detail later.
 
-==== Clipping Planes ====
+## Clipping Planes
 
-If you’ve noticed, there’s a clipping plane ''%%_reflectionClippingPlane%%'' that hasn’t been explained yet. Let’s dive into its purpose. This clipping plane is used to draw only objects above the water surface. This ensures that only the upper half of objects is reflected in the water, as is typically observed in realistic reflections. You can declare it like this:
+If you’ve noticed, there’s a clipping plane <b>`_reflectionClippingPlane`</b> that hasn’t been explained yet. Let’s dive into its purpose. This clipping plane is used to draw only objects above the water surface. This ensures that only the upper half of objects is reflected in the water, as is typically observed in realistic reflections. You can declare it like this:
 
 ```csharp
 private readonly Vector4 _reflectionClippingPlane = new(0f, 1f, 0f, -QuadHeight);
 ```
 
-This plane is defined by a mathematical equation //(Ax + By + Cz + D = 0)//, where (A, B, C) represents the normal vector perpendicular to the plane, and D is the distance from the origin along that normal vector.
+This plane is defined by a mathematical equation *(Ax + By + Cz + D = 0)*, where (A, B, C) represents the normal vector perpendicular to the plane, and D is the distance from the origin along that normal vector.
 
-In our case, the water surface acts as a //flat plane parallel to the XZ plane//, with its //normal vector// pointing directly //upwards (0, 1, 0)//.
+In our case, the water surface acts as a *flat plane parallel to the XZ plane*, with its *normal vector* pointing directly *upwards (0, 1, 0)*.
 
-We utilize the value //-QuadHeight// in the reflection clipping plane equation specifically for the shader handling objects within the water. This value is later employed in the pixel shader using the ''%%clip%%'' function, where we’ll clip the pixels below the Reflection Plane. Here’s an example:
+We utilize the value *-QuadHeight* in the reflection clipping plane equation specifically for the shader handling objects within the water. This value is later employed in the pixel shader using the <b>`clip`</b> function, where we’ll clip the pixels below the Reflection Plane. Here’s an example:
 
 ```csharp
 // Uniforms
@@ -442,7 +443,7 @@ float4 MainPS(VertexShaderOutput input) : COLOR0
 }
 ```
 
-The ''%%clip%%'' function is responsible for discarding pixels based on a given condition. By utilizing ''%%-QuadHeight%%'' in our shader, we ensure that pixels representing objects below the water surface are discarded during rendering, effectively clipping them from the final reflection image.
+The <b>`clip`</b> function is responsible for discarding pixels based on a given condition. By utilizing <b>`-QuadHeight`</b> in our shader, we ensure that pixels representing objects below the water surface are discarded during rendering, effectively clipping them from the final reflection image.
 
 Also this works when we want to discard the pixels from above the water, in that case, for the refraction:
 
@@ -450,9 +451,9 @@ Also this works when we want to discard the pixels from above the water, in that
 private readonly Vector4 _refractionClippingPlane = new(0f, -1f, 0f, QuadHeight);
 ```
 
-===== Refraction =====
+## Refraction
 
-Drawing the refraction onto a render target is a straightforward process, especially when compared to rendering reflections. It involves rendering the scene from the perspective of the camera while utilizing the ''%%_refractionClippingPlane%%'' to discard pixels above the water surface.
+Drawing the refraction onto a render target is a straightforward process, especially when compared to rendering reflections. It involves rendering the scene from the perspective of the camera while utilizing the <b>`_refractionClippingPlane`</b> to discard pixels above the water surface.
 
 ```csharp
 private void DrawRefraction()
@@ -471,9 +472,9 @@ private void DrawRefraction()
 }
 ```
 
-Great, now we can proceed to the //actual water shader// and see how all of this comes together.
+Great, now we can proceed to the *actual water shader* and see how all of this comes together.
 
-===== Water Shader =====
+## Water Shader
 
 First, we’ll declare the necessary uniforms and textures for our water shader. These include parameters for lighting, camera position, water movement, and texture samplers for the various maps we’ll use:
 
@@ -539,9 +540,9 @@ sampler2D normalMapSampler = sampler_state
 };
 ```
 
-In this shader, the uniforms ''%%KSpecular%%'', ''%%Shininess%%'', ''%%LightPosition%%'', ''%%LightColor%%'', and ''%%CameraPosition%%'' define the lighting and viewing parameters. The ''%%MoveFactor%%'', ''%%Tiling%%'', and ''%%WaveStrength%%'' control the water's movement and appearance. The matrices ''%%ReflectionView%%'', ''%%Projection%%'', ''%%WorldViewProjection%%'', and ''%%World%%'' are used for transforming coordinates. The texture samplers ''%%refractionSampler%%'', ''%%reflectionSampler%%'', ''%%distortionSampler%%'', and ''%%normalMapSampler%%'' are used to sample the respective textures needed for rendering the water surface.
+In this shader, the uniforms <b>`KSpecular`</b>, <b>`Shininess`</b>, <b>`LightPosition`</b>, <b>`LightColor`</b>, and <b>`CameraPosition`</b> define the lighting and viewing parameters. The <b>`MoveFactor`</b>, <b>`Tiling`</b>, and <b>`WaveStrength`</b> control the water's movement and appearance. The matrices <b>`ReflectionView`</b>, <b>`Projection`</b>, <b>`WorldViewProjection`</b>, and <b>`World`</b> are used for transforming coordinates. The texture samplers <b>`refractionSampler`</b>, <b>`reflectionSampler`</b>, <b>`distortionSampler`</b>, and <b>`normalMapSampler`</b> are used to sample the respective textures needed for rendering the water surface.
 
-For the //Distortion Map// we’ll use a texture that looks like this:
+For the *Distortion Map* we’ll use a texture that looks like this:
 
 <a href="../../../content/tutorials/garank/1_ant9-odsyiryo7ty_utx1w.webp" download>
   <img src="../../../content/tutorials/garank/1_ant9-odsyiryo7ty_utx1w.webp" alt="Distortion Map Texture" width="400" />
@@ -549,9 +550,9 @@ For the //Distortion Map// we’ll use a texture that looks like this:
 
 __Distortion Map Texture__
 
-By using this texture we can //distort// the //texturee coordinates//, creating the effect of small waves on the water surface. This distortion helps to simulate the dynamic and realistic appearence of water
+By using this texture we can *distort* the *texturee coordinates*, creating the effect of small waves on the water surface. This distortion helps to simulate the dynamic and realistic appearence of water
 
-For the //Normal Map// we’ll use another texture, like this:
+For the *Normal Map* we’ll use another texture, like this:
 
 <a href="../../../content/tutorials/garank/1_mz-hrsldcrhz5adzjfxeig.webp" download>
   <img src="../../../content/tutorials/garank/1_mz-hrsldcrhz5adzjfxeig.webp" alt="Normal Map Texture" width="400" />
@@ -559,10 +560,9 @@ For the //Normal Map// we’ll use another texture, like this:
 
 __Normal Map Texture__
 
-Normal Map Texture
-This map contains information about the //surface normals//, which are essential for simulating the way light interacts with the water. Unlike the distortion map, which is used to manipulate texture coordinates, the normal map is used for light-related calculations.
+This map contains information about the *surface normals*, which are essential for simulating the way light interacts with the water. Unlike the distortion map, which is used to manipulate texture coordinates, the normal map is used for light-related calculations.
 
-===== Vertex Shader =====
+## Vertex Shader
 
 In our vertex shader, we transform the vertex data to prepare it for the pixel shader. Here’s a breakdown of the process:
 
@@ -614,9 +614,9 @@ VertexShaderOutput MainVS(in VertexShaderInput input)
 
 Excellent, with this, we’ve finished the vertex shader part, and we can move on to the pixel shader.
 
-===== Pixel Shader =====
+## Pixel Shader
 
-==== Projective Texture Mapping ====
+### Projective Texture Mapping
 
 Firstly, we transform the projective refraction texture coordinates to Normalized Device Coordinates (NDC) space. Then, we scale and offset the xy coordinates appropriately to ensure accurate sampling of a DirectX (DX) texture.
 
@@ -659,19 +659,19 @@ float4 MainPS(VertexShaderOutput input) : COLOR
 }
 ```
 
-For the //refraction//, we adjust the texture coordinates based on the distance from the camera to enhance the refraction effect. This adjustment ensures that objects farther from the camera refract more, contributing to a more realistic rendering of underwater scenes.
+For the *refraction*, we adjust the texture coordinates based on the distance from the camera to enhance the refraction effect. This adjustment ensures that objects farther from the camera refract more, contributing to a more realistic rendering of underwater scenes.
 
-Similarly, for the //reflection//, we transform the reflection texture coordinates to NDC space and adjust them based on the distance from the camera. This helps to create a convincing reflection effect, with objects farther from the camera reflecting more prominently.
+Similarly, for the *reflection*, we transform the reflection texture coordinates to NDC space and adjust them based on the distance from the camera. This helps to create a convincing reflection effect, with objects farther from the camera reflecting more prominently.
 
-==== Distortion Map / DuDv Map ====
+### Distortion Map / DuDv Map
 
 Now, we are going to sample both the reflection and refraction textures using the Distortion Map shown above.
 
-This map are conformed by //red and green// colors, basically a float2.
+This map are conformed by *red and green* colors, basically a float2.
 
-However, this values are always going to be positive in this Distortion Map, so our distortions //would always be positive//, the values are between (0.0,0.0) and (1.0,1.0). We want to be able to have //both positive and negative// distortions for this to look realistic.
+However, this values are always going to be positive in this Distortion Map, so our distortions *would always be positive*, the values are between (0.0,0.0) and (1.0,1.0). We want to be able to have *both positive and negative* distortions for this to look realistic.
 
-In order to convert these values to be between (-1.0,-1.0) and (1.0,1.0) we simply multiply by 2 and subtract 1. With that, we use that to distort the //Reflection and Refraction texture coordinates// by simply adding the distortion onto those texture coordinates.
+In order to convert these values to be between (-1.0,-1.0) and (1.0,1.0) we simply multiply by 2 and subtract 1. With that, we use that to distort the *Reflection and Refraction texture coordinates* by simply adding the distortion onto those texture coordinates.
 
 ```csharp
 float2 distortion = (tex2D(distortionSampler, Input.TextureCoordinates)).rg 
@@ -681,13 +681,13 @@ reflectionTex += distortion;
 refractionTex += distortion;
 ```
 
-This distortion might be a little strong by default so we’ll use the uniform we previously declared as ''%%WaveStrength%%'' in order to lesser a bit the distortion.
+This distortion might be a little strong by default so we’ll use the uniform we previously declared as <b>`WaveStrength`</b> in order to lesser a bit the distortion.
 
-==== Moving the waves ====
+### Moving the waves
 
-The way we are going get the water to look like it’s moving, is //using an offset// for where we sample the Distortion Map. We’ve already declared that, which is the ''%%MoveFactor%%'' and we’re going to change this offset over time.
+The way we are going get the water to look like it’s moving, is *using an offset* for where we sample the Distortion Map. We’ve already declared that, which is the <b>`MoveFactor`</b> and we’re going to change this offset over time.
 
-To achieve this effect, we add the //MoveFactor// to the //X// component of the texture coordinates and sample the distortion map. Afterward, we perform a //second sampling// for the //Y// component, applying an additional distortion in a //different direction//. This process enhances the realism of the distortion effect, creating a more dynamic appearance.
+To achieve this effect, we add the *MoveFactor* to the *X* component of the texture coordinates and sample the distortion map. Afterward, we perform a *second sampling* for the *Y* component, applying an additional distortion in a *different direction*. This process enhances the realism of the distortion effect, creating a more dynamic appearance.
 
 ```csharp
 float2 distortedTexCoords = tex2D(distortionSampler, float2(input.TextureCoordinates.x + 
@@ -707,9 +707,9 @@ float4 refractionColor = tex2D(refractionSampler, refractionTex);
 
 I’ve multiplied the first line by 0.01 to slightly adjust the intensity of the distortion applied in the initial sample.
 
-==== Fresnel ====
+### Fresnel
 
-If you don’t know what the //Fresnel// Effect is, here’s //[[https://www.dorian-iten.com/fresnel/|a very good explanation]]// by //Dorian//.
+If you don’t know what the *Fresnel* Effect is, here’s [a very good explanation](https://www.dorian-iten.com/fresnel/) by *Dorian*.
 
 To implement this effect, we need to use the View Direction and the Normal from the water like this:
 
@@ -718,7 +718,7 @@ float3 viewDirection = normalize(CameraPosition - input.WorldPosition.xyz);
 float refractiveFactor = dot(viewDirection, normalize(input.Normal.xyz));
 ```
 
-And the output would be a //linear interpolation// between the ''%%reflectionColor%%'' and ''%%refractionColor%%'' with a value of ''%%refractiveFactor%%'' which we previously calculated.
+And the output would be a *linear interpolation* between the <b>`reflectionColor`</b> and <b>`refractionColor`</b> with a value of <b>`refractiveFactor`</b> which we previously calculated.
 
 ```csharp
 float4 finalColor = lerp(reflectionColor, refractionColor, refractiveFactor);
@@ -726,15 +726,15 @@ float4 finalColor = lerp(reflectionColor, refractionColor, refractiveFactor);
 
 But we’re not done yet! The last thing we need to add is Normal Maps and Lighting.
 
-==== Normal Maps ====
+### Normal Maps
 
-We can use a //normal map// to indicate the normal at different points on the water surface. The pixel color at any point on the normal map can indicate the //3D normal vector// of the water at that point. (R, G, B) -> (X, Y, Z). The normal map I’ve showed above is mostly blue color, because the //blue// value represents the //up axis// and in our case that’s the //Y axis//.
+We can use a *normal map* to indicate the normal at different points on the water surface. The pixel color at any point on the normal map can indicate the *3D normal vector* of the water at that point. (R, G, B) -> (X, Y, Z). The normal map I’ve showed above is mostly blue color, because the *blue* value represents the *up axis* and in our case that’s the *Y axis*.
 
-So, we’ll use the //blue component// of the normal map color to be the //Y component// in the normal vector, the red and green components of the normal map can then be used as the X and Z components of the normal vector. (R, G, B) -> (R, B, G).
+So, we’ll use the *blue component* of the normal map color to be the *Y component* in the normal vector, the red and green components of the normal map can then be used as the X and Z components of the normal vector. (R, G, B) -> (R, B, G).
 
-The only problem here, is that because you can never have a negative color, the components of the normal vector are also going to be positive. That’s //not a problem// for the //Y// component, because we would always want our surface normal to be //pointing upwards// to some extent. But we don’t necessarily want the normal to always be pointing in the positive X and Z directions. It should also be able to point in the negative //X// and //Z directions// as well.
+The only problem here, is that because you can never have a negative color, the components of the normal vector are also going to be positive. That’s *not a problem* for the *Y* component, because we would always want our surface normal to be *pointing upwards* to some extent. But we don’t necessarily want the normal to always be pointing in the positive X and Z directions. It should also be able to point in the negative *X* and *Z directions* as well.
 
-To do this, we’re going to use the same conversion we’ve used for the distortion map. //Multiplying by 2 and subtracting 1//. And that way, we can extract the normal vectors from the normal map:
+To do this, we’re going to use the same conversion we’ve used for the distortion map. *Multiplying by 2 and subtracting 1*. And that way, we can extract the normal vectors from the normal map:
 
 ```csharp
 float4 normalMapColor = tex2D(normalMapSampler, distortedTexCoords);
@@ -744,25 +744,25 @@ normal = normalize(normal);
 
 Now, utilizing these extracted normal vectors, we proceed to calculate the lighting effects.
 
-==== Lighting ====
+### Lighting
 
-The lighting technique we are going to use is basically the //Blinn Phong model//, if you want learn more about it [[https://learnopengl.com/Advanced-Lighting/Advanced-Lighting|click here]]. The uniforms involved here are: ''%%KSpecular%%'', ''%%Shininess%%'', ''%%LightPosition%%'' and ''%%LightColor%%''.
+The lighting technique we are going to use is basically the *Blinn Phong model*, if you want learn more about it [click here](https://learnopengl.com/Advanced-Lighting/Advanced-Lighting). The uniforms involved here are: <b>`KSpecular`</b>, <b>`Shininess`</b>, <b>`LightPosition`</b> and <b>`LightColor`</b>.
 
-First, we obtain the //light direction// and the //half vector// by normalizing the vectors representing the light position and the sum of the light and view directions, respectively.
+First, we obtain the *light direction* and the *half vector* by normalizing the vectors representing the light position and the sum of the light and view directions, respectively.
 
 ```csharp
 float3 lightDirection = normalize(LightPosition - input.WorldPosition.xyz);
 float3 halfVector = normalize(lightDirection + viewDirection);
 ```
 
-With these vectors, we compute the dot products //NdotL// and //NdotH//, which represent the //angle between the normal and the light direction//, and between the //normal and the half vector//, respectively.
+With these vectors, we compute the dot products *NdotL* and *NdotH*, which represent the *angle between the normal and the light direction*, and between the *normal and the half vector*, respectively.
 
 ```csharp
 float NdotL = saturate(dot(normal, lightDirection));
 float NdotH = saturate(dot(normal, halfVector));
 ```
 
-Using these dot products, we calculate the //specular lighting// contribution by applying the //Phong// reflection model equation.
+Using these dot products, we calculate the *specular lighting* contribution by applying the *Phong* reflection model equation.
 
 ```csharp
 float3 specularLight = sign(NdotL) * KSpecular * LightColor * pow(NdotH, Shininess);
