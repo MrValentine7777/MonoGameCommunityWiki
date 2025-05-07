@@ -3,7 +3,7 @@
 
 ==== Hi! Welcome to the Community! ====
 
-{{:monogame_box_art_fixed.png?direct&400|}}
+![MonoGame Logo](../../content/monogame_box_art_fixed.webp)
 ----
 First and foremost, this wiki is in no way affiliated with the official MonoGame site, it is a project started by a member of the community, intended to be a resource for people looking to find solutions and learn more about using [MonoGame](monogame/monogame.md).
 ----
@@ -20,35 +20,45 @@ Happy Coding!
 
 ===== MonoGame Routes =====
 
-{{:monogame_routes.png?direct&600|}}
+![MonoGame Logo](../../content/monogame_routes.png)
 
 ===== MonoGame =====
 
-See the MonoGame page [[monogame:monogame|here]].
+See the MonoGame page [here](monogame/monogame.md).
 
 ===== Useful Images =====
 
-Here you will find images which should clarify or guide you through the world of MonoGame. [[:usefulimages:usefulimages|Useful Images]] page.
+Here you will find images which should clarify or guide you through the world of MonoGame.
+
+[Useful Images](usefulimages/usefulimages.md) page.
 
 ===== The Magazine =====
 
-Download the latest Magazine on the dedicated [[:magazine:magazine|Magazine]] page.
+Download the latest Magazine on the dedicated page.
+
+[Magazine](magazine/magazine.md) page.
 
 ===== The Books =====
 
-A list of recommended books for both C# and MonoGame [XNA] [[:books:books|Books]].
+A list of recommended books for both C# and MonoGame [XNA].
+
+[Books](books/books.md) page..
 
 ===== The Tutorials =====
 
-Yes, it is finally here, and yes this will be the text on this section for a long while until I eventually notice it and edit it in future. [[:tutorials:tutorials|Tutorials]].
+Yes, it is finally here, and yes this will be the text on this section for a long while until I eventually notice it and edit it in future.
+
+[Tutorials](tutorials/tutorials.md) page..
 
 ===== Game Jam Manual =====
 
-Download the Game Jam Manual on the [[:gamejammanual:gamejammanual|Game Jam Manual]] page.
+Download the Game Jam Manual on the Gam Jam Manual page.
+
+[Game Jam Manual](gamejammanual/gamejammanual.md) page.
 
 ===== MonoGame on the Web =====
 
-I will collate content relating to using MonoGame in a browser [[monogame:monogameontheweb|here]].
+I will collate content relating to using MonoGame in a browser [here](monogame/monogameontheweb.md).
 
 ===== Stuff to organise in future =====
 
@@ -56,7 +66,7 @@ Here is a collection of posts made on the Discord Forum during its short brief l
 
 ===== Announcements =====
 
-I will add [[announcements:Announcements|announcements]] here, and on the dedicated page.
+I will add [announcements](announcements/announcements.md) here, and on the dedicated page.
 
 
 ===== This Project Began: =====
