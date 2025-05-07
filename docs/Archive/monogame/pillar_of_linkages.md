@@ -11,9 +11,9 @@ Notice the thin line separators, these are used to group related links.
 I added Start and End markers for clarity, plans to add mid-point markers when links lists grow too large.
 ====== The U-MG-RL Archive ======
 
-To keep this thread clean in the early days I  --- //[[members:MrValentine:MrValentine]] 2023/09/18 06:35// have opted to place the current list of links from the [[https://community.monogame.net/t/useful-monogame-related-links-u-mg-rl/8573?u=mrvalentine|MonoGame Forum]] into an archive page and slowly move them over to this page with some form of order to the types of content.
+To keep this thread clean in the early days I  --- //[[members:MrValentine:MrValentine]] 2023/09/18 06:35// have opted to place the current list of links from the [MonoGame Forum](https://community.monogame.net/t/useful-monogame-related-links-u-mg-rl/8573?u=mrvalentine) into an archive page and slowly move them over to this page with some form of order to the types of content.
 
-[[monogame:archives:umgrl|U-MG-RL Links Archive]]
+[Visit the archived - yet to be filtered - list of useful links.](monogame/archives/umgrl.md)
 
 ====== MonoGame Related Start ======
 
@@ -37,7 +37,7 @@ http://community.monogame.net/
 
 XNA API
 
-[[https://learn.microsoft.com/en-us/previous-versions/windows/xna/bb200104(v=xnagamestudio.41)?redirectedfrom=MSDN]]
+https://learn.microsoft.com/en-us/previous-versions/windows/xna/bb200104(v=xnagamestudio.41)?redirectedfrom=MSDN
 
 ----
 
@@ -55,17 +55,17 @@ https://github.com/AristurtleDev/MadeWithMonoGame
 
 ManBeardGames Scene Manager
 
-[[https://manbeardgames.github.io/docs/tutorials/monogame-3-8/scenes/introduction]]
+https://manbeardgames.github.io/docs/tutorials/monogame-3-8/scenes/introduction
 
 ----
 
 Charles Humphrey's MonoGame.Randomchaos.* Nuget Packages Update
 
-[[https://community.monogame.net/t/monogame-randomchaos-nuget-packages-update/19434]]
+https://community.monogame.net/t/monogame-randomchaos-nuget-packages-update/19434
 
-¬ Packages: [[https://www.nuget.org/packages?q=MonoGame.Randomchaos.&prerel=true&sortby=relevance]]
+¬ Packages: https://www.nuget.org/packages?q=MonoGame.Randomchaos.&prerel=true&sortby=relevance
 
-¬ GitHub Repo: [[https://github.com/NemoKradXNA/MonoGame.Randomchaos.Services]]
+¬ GitHub Repo: https://github.com/NemoKradXNA/MonoGame.Randomchaos.Services
 
 ----
 
@@ -215,7 +215,7 @@ https://community.monogame.net/t/how-to-include-missing-intellesense-in-3-8-1-30
 
 XML Documentation Missing fix
 
-Also, use <code csharp>/// <inheritdoc /></code>
+Also, use ```/// <inheritdoc />```
 
 https://github.com/AristurtleDev/monogame-xml-documentation
 
@@ -315,12 +315,14 @@ https://monogame.net/foundation/meeting-2023-11-22.html
 
 ManBeardGames Collision Detection
 
-[[https://manbeardgames.github.io/docs/tutorials/monogame-3-8/collision-detection/introduction]]
+https://manbeardgames.github.io/docs/tutorials/monogame-3-8/collision-detection/introduction
+
 ----
 
 XNA 2d Animation Tutorial
 
 https://www.youtube.com/watch?v=tNdDRfxW87k
+
 ----
 
 A Playlist of 40 videos.
@@ -328,6 +330,7 @@ A Playlist of 40 videos.
 https://www.youtube.com/watch?v=exqk0lH7-xc&list=PLDC1A9D5C3F8ED318
 
 Note, use this for the code, not the setup.
+
 ----
 
 ====== Game Development Related Start ======

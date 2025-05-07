@@ -4,14 +4,20 @@
 ==== Hi! Welcome to the Community! ====
 
 <img src="../../content/monogame_box_art_fixed.webp" alt="MonoGame Logo" width="400" />
+
 ----
+
 First and foremost, this wiki is in no way affiliated with the official MonoGame site, it is a project started by a member of the community, intended to be a resource for people looking to find solutions and learn more about using [MonoGame](monogame/monogame.md).
+
 ----
 
 As the host I will be populating this service with content as best and frequently as I can.
 I personally find the need for a single location for solutions to my constant repeat issues, and figured a snippet collection with detailed explanations was the place to go.
+
 I will also collate code discovered via other sites and do my best to document the links and more.
-I will also create helpful graphics to go along with code where appropriate to instil the information being presented.
+
+I will also create helpful graphics to go along with code where appropriate to instill the information being presented.
+
 Anyway, enough blabbering for now, I hope I can keep this alive and functional long enough.
 
 Happy Coding!
