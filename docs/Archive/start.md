@@ -62,7 +62,9 @@ I will collate content relating to using MonoGame in a browser [here](monogame/m
 
 ===== Stuff to organise in future =====
 
-Here is a collection of posts made on the Discord Forum during its short brief life, meant to be reposted to the GitHub Discussions at some point in time. might just link to here over, there in future [[forum_related|Forum Related]].
+Here is a collection of posts made on the Discord Forum during its short brief life, meant to be reposted to the GitHub Discussions at some point in time. might just link to here, over there in future.
+
+[Forum Related](forum_related.md) page..
 
 ===== Announcements =====
 
