@@ -5,7 +5,7 @@
 
 {{:monogame_box_art_fixed.png?direct&400|}}
 ----
-First and foremost, this wiki is in no way affiliated with the official MonoGame site, it is a project started by a member of the community, intended to be a resource for people looking to find solutions and learn more about using [[monogame:MonoGame|MonoGame]].
+First and foremost, this wiki is in no way affiliated with the official MonoGame site, it is a project started by a member of the community, intended to be a resource for people looking to find solutions and learn more about using [MonoGame](monogame/monogame.md).
 ----
 
 As the host I will be populating this service with content as best and frequently as I can.
@@ -41,6 +41,7 @@ A list of recommended books for both C# and MonoGame [XNA] [[:books:books|Books]
 ===== The Tutorials =====
 
 Yes, it is finally here, and yes this will be the text on this section for a long while until I eventually notice it and edit it in future. [[:tutorials:tutorials|Tutorials]].
+
 ===== Game Jam Manual =====
 
 Download the Game Jam Manual on the [[:gamejammanual:gamejammanual|Game Jam Manual]] page.
