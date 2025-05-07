@@ -1,6 +1,6 @@
 ====== The Pillar of Linkages ======
 
-{{:monogame:cdfe9d95-7021-42dc-81bc-a7e4d471adfb.jpg?nolink&200|}}
+<img src="../../../content/monogame/cdfe9d95-7021-42dc-81bc-a7e4d471adfb.jpg" alt="MonoGame Logo" width="400" />
 
 In this section you will find any and all available useful links concerning Game Development and of course MonoGame.
 
@@ -9,11 +9,12 @@ They will be divided into MonoGame Related and Game Development Related, and oth
 Notice the thin line separators, these are used to group related links.
 
 I added Start and End markers for clarity, plans to add mid-point markers when links lists grow too large.
+
 ====== The U-MG-RL Archive ======
 
-To keep this thread clean in the early days I  --- //[[members:MrValentine:MrValentine]] 2023/09/18 06:35// have opted to place the current list of links from the [MonoGame Forum](https://community.monogame.net/t/useful-monogame-related-links-u-mg-rl/8573?u=mrvalentine) into an archive page and slowly move them over to this page with some form of order to the types of content.
+To keep this thread clean in the early days I have opted to place the current list of links from the [MonoGame Forum](https://community.monogame.net/t/useful-monogame-related-links-u-mg-rl/8573?u=mrvalentine) into an archive page and slowly move them over to this page with some form of order to the types of content.
 
-[Visit the archived - yet to be filtered - list of useful links.](monogame/archives/umgrl.md)
+[Visit the archived - yet to be filtered - list of useful links.](../monogame/archives/umgrl.md)
 
 ====== MonoGame Related Start ======
 
