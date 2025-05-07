@@ -1,3 +1,0 @@
-====== GOTO ======
-
-Never use this.
