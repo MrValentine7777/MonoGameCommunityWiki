@@ -3,30 +3,33 @@
 This page will be added to with more code samples and usability.
 
 [ADDMORE: Include the guide on GamePad.GetState(int) to allow using more than four gamepads]
+
 ==== Preventing Repeated Code ====
 
 The following code is how you prevent a button press repeating.
 
 Required using statements:
 
-<code csharp>
+```csharp
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
-</code>
+```
 
 You need a global variable per button:
-<code csharp>
+
+```csharp
 // global variables
 // Using a boolean flag to check if the A button is being held down
 // true if it is, false if it is not
 bool p1AButtonDown = false;
-</code>
+```
 
 The code required:
-<code csharp>
+
+```csharp
 GamePadState PlayerOne = GamePad.GetState(PlayerIndex.One);
 if (PlayerOne.IsConnected)
 {
@@ -43,13 +46,15 @@ if (PlayerOne.IsConnected)
         // Code for A button release (if needed)
     }
 }
-</code>
+```
 
 [ADDMORE: Code required to handle the sticks and triggers]
+
 ==== GamePad States ====
 
 Below is the gamepad states:
-<code csharp>
+
+```csharp
 [
 GamePadState:
 IsConnected=1, // 1 means connected, 0 means not connected
@@ -103,13 +108,14 @@ Right=0
 // For example, half way is represented by 0.5
 ]
 ]
-</code>
+```
 
 The above layout was copied from printing the PlayerOne values as the following code demonstrates:
 
 
 [ADDMORE: The following code needs to be updated with the single press code]
-<code csharp>
+
+```csharp
 GamePadState PlayerOne = GamePad.GetState(PlayerIndex.One);
 if (PlayerOne.IsConnected)
 {
@@ -118,10 +124,38 @@ if (PlayerOne.IsConnected)
         Debug.WriteLine(PlayerOne);
     }
 }
-</code>
+```
 
 Which spits out a single line as below:
 
-<code console>
-[GamePadState: IsConnected=1, PacketNumber=-451982739, Buttons=[GamePadButtons: A=1, B=0, Back=0, X=0, Y=0, Start=0, LeftShoulder=0, LeftStick=0, RightShoulder=0, RightStick=0, BigButton=0], DPad=0000, ThumbSticks=[GamePadThumbSticks: Left={X:0 Y:0}, Right={X:0 Y:0}], Triggers=[GamePadTriggers: Left=0, Right=0]]
-</code>
+```csharp
+[
+GamePadState: 
+IsConnected=1, 
+PacketNumber=-451982739, 
+Buttons=
+[
+GamePadButtons: 
+A=1, 
+B=0, 
+Back=0, 
+X=0, 
+Y=0, 
+Start=0, 
+LeftShoulder=0, 
+LeftStick=0, 
+RightShoulder=0, 
+RightStick=0, 
+BigButton=0], 
+DPad=0000, 
+ThumbSticks=
+[GamePadThumbSticks:
+Left={X:0 Y:0},
+Right={X:0 Y:0}],
+Triggers=
+[GamePadTriggers:
+Left=0, 
+Right=0
+]
+]
+```
