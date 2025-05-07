@@ -3,7 +3,7 @@
 
 ==== Hi! Welcome to the Community! ====
 
-![MonoGame Logo](../../content/monogame_box_art_fixed.webp)
+<img src="../../content/monogame_box_art_fixed.webp" alt="MonoGame Logo" width="400" />
 ----
 First and foremost, this wiki is in no way affiliated with the official MonoGame site, it is a project started by a member of the community, intended to be a resource for people looking to find solutions and learn more about using [MonoGame](monogame/monogame.md).
 ----
@@ -20,7 +20,7 @@ Happy Coding!
 
 ===== MonoGame Routes =====
 
-![MonoGame Logo](../../content/monogame_routes.png)
+<img src="../../content/monogame_routes.png" alt="MonoGame Logo" width="600" />
 
 ===== MonoGame =====
 
